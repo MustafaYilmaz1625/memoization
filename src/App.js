@@ -9,6 +9,7 @@ function App() {
   const data = useMemo(() => {
     return calculateObject();
   }, []);
+  // const data = { name: "mmm" };
 
   return (
     <div className="App">
@@ -19,14 +20,15 @@ function App() {
       <button onClick={() => setNumber(number + 1)}>Click</button>
       <br />
       <br />
-      <input value={text} onChange={(target) => setText(target.value)} />
+      <input value={text} onChange={({ target }) => setText(target.value)} />
     </div>
   );
 }
 
 function calculateObject() {
   console.log("Calculating Object...");
-  for (let i = 0; i < 1000000000; i++) console.log("Calculating completed!!");
+  for (let i = 0; i < 100000000; i++) {}
+  console.log("Calculating completed!!");
   return { name: "mustafa" };
 }
 
